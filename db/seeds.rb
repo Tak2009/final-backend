@@ -1,7 +1,28 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+require 'net/http'
+require 'uri'
+require 'json'
+
+# original source: https://data.opendatasoft.com/explore/dataset/world-heritage-list%40public-us/api/?disjunctive.states
+# latin america
+uri = URI.parse('https://data.opendatasoft.com/api/records/1.0/search/?dataset=world-heritage-list%40public-us&rows=40&facet=category&facet=region&facet=states&refine.region=Latin+America+and+the+Caribbean')
+json = Net::HTTP.get(uri) #NET::HTTPを利用してAPIを呼ぶ
+result = JSON.parse(json) #返ってきたjsonデータをrubyの配列に変換するためのライン
+sites = result['records']
+# Latinamerica.create(category: sites[0]['fields']['category'])
+
+# byebug
+
+Latinamerica.delete_all
+sites.each do |site| Latinamerica.create(
+        category: site['fields']['category'],
+        id_number: site['fields']['id_number'],
+        region: site['fields']['region'],
+        site: site['fields']['site'],
+        states: site['fields']['states'],
+        image_url: site['fields']['image_url'],
+        location: site['fields']['location'],
+        short_description: site['fields']['short_description'],
+        http_url: site['fields']['http_url']
+    )
+end

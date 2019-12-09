@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_12_09_182839) do
     t.string "location"
     t.string "short_description"
     t.string "http_url"
-    t.integer "rating"
+    t.integer "rating", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
