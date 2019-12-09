@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: MyString
+  id_number: 1
+  region: MyString
+  site: MyString
+  states: MyString
+  image_url: MyString
+  location: MyString
+  short_description: MyString
+  http_url: MyString
+  rating: 1
+
+two:
+  category: MyString
+  id_number: 1
+  region: MyString
+  site: MyString
+  states: MyString
+  image_url: MyString
+  location: MyString
+  short_description: MyString
+  http_url: MyString
+  rating: 1
