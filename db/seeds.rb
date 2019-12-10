@@ -26,3 +26,10 @@ sites.each do |site| Latinamerica.create(
         http_url: site['fields']['http_url']
     )
 end
+
+l1 = Latinamerica.find(1)
+
+r1 = Review.create(:latinamerica_id => l1.id, :comment => "good enough", :rating => 5)
+r2 = Review.create(:latinamerica_id => l1.id, :comment => "horrible", :rating => 1)
+r3 = Review.create(:latinamerica_id => l1.id, :comment => "amazing", :rating => 5)
+r4 = Review.create(:latinamerica_id => l1.id, :comment => "hmmmmm")

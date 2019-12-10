@@ -4,13 +4,15 @@ class LatinamericasController < ApplicationController
   # GET /latinamericas
   def index
     @latinamericas = Latinamerica.all
-
-    render json: @latinamericas
+    
+    # render json: @latinamericas # original
+    render json: @latinamericas, include: [:reviews] # added reviews manually
   end
 
   # GET /latinamericas/1
   def show
-    render json: @latinamerica
+    # render json: @latinamerica # original
+    render json: @latinamerica, include: [:reviews] # added reviews manually
   end
 
   # POST /latinamericas
