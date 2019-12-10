@@ -13,7 +13,7 @@ sites = result['records']
 
 # byebug
 
-Latinamerica.delete_all
+# Latinamerica.delete_all
 sites.each do |site| Latinamerica.create(
         category: site['fields']['category'],
         id_number: site['fields']['id_number'],
@@ -33,3 +33,4 @@ r1 = Review.create(:latinamerica_id => l1.id, :comment => "good enough", :rating
 r2 = Review.create(:latinamerica_id => l1.id, :comment => "horrible", :rating => 1)
 r3 = Review.create(:latinamerica_id => l1.id, :comment => "amazing", :rating => 5)
 r4 = Review.create(:latinamerica_id => l1.id, :comment => "hmmmmm")
+r5 = Review.create(:latinamerica_id => l1.id, :comment => "awesome", :rating => 5)
