@@ -29,6 +29,7 @@ end
 
 l1 = Latinamerica.find(1)
 l2 = Latinamerica.find(2)
+l3 = Latinamerica.find(3)
 
 r1 = Review.create(:latinamerica_id => l1.id, :comment => "good enough", :rating => 5)
 r2 = Review.create(:latinamerica_id => l1.id, :comment => "horrible", :rating => 1)
@@ -41,3 +42,9 @@ r7 = Review.create(:latinamerica_id => l2.id, :comment => "horrible", :rating =>
 r8 = Review.create(:latinamerica_id => l2.id, :comment => "amazingly horrible", :rating => 1)
 r9 = Review.create(:latinamerica_id => l2.id, :comment => "hmmmmm, can not believe it")
 r10 = Review.create(:latinamerica_id => l2.id, :comment => "damn", :rating => 1)
+
+r11 = Review.create(:latinamerica_id => l3.id, :comment => "too good", :rating => 5)
+r12 = Review.create(:latinamerica_id => l3.id, :comment => "horrible", :rating => 1)
+r13 = Review.create(:latinamerica_id => l3.id, :comment => "amazingly horrible", :rating => 5)
+r14 = Review.create(:latinamerica_id => l3.id, :comment => "damn", :rating => 1)
+r15 = Review.create(:latinamerica_id => l3.id, :comment => "nutral", :rating => 3)
