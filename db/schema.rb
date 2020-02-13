@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_092007) do
     t.string "location"
     t.string "short_description"
     t.string "http_url"
+    t.integer "index"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

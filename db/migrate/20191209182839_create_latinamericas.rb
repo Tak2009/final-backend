@@ -10,6 +10,7 @@ class CreateLatinamericas < ActiveRecord::Migration[6.0]
       t.string :location
       t.string :short_description
       t.string :http_url
+      t.integer :index
       
 
       t.timestamps

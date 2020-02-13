@@ -5,7 +5,7 @@ require 'json'
 
 # original source: https://data.opendatasoft.com/explore/dataset/world-heritage-list%40public-us/api/?disjunctive.states
 # latin america
-uri = URI.parse('https://data.opendatasoft.com/api/records/1.0/search/?dataset=world-heritage-list%40public-us&rows=25&facet=category&facet=region&facet=states&refine.region=Latin+America+and+the+Caribbean')
+uri = URI.parse('https://data.opendatasoft.com/api/records/1.0/search/?dataset=world-heritage-list%40public-us&rows=30&facet=category&facet=region&facet=states&refine.region=Latin+America+and+the+Caribbean')
 json = Net::HTTP.get(uri) #NET::HTTPを利用してAPIを呼ぶ
 result = JSON.parse(json) #返ってきたjsonデータをrubyの配列に変換するためのライン
 sites = result['records']
@@ -26,6 +26,7 @@ sites.each do |site| Latinamerica.create(
         http_url: site['fields']['http_url']
     )
 end
+
 
 l1 = Latinamerica.find(1)
 l2 = Latinamerica.find(2)
